@@ -1,4 +1,4 @@
-# Lag BaOmer PM2.5 Analysis 🇮🇱
+# Lag BaOmer PM2.5 Analysis 
 
 A data-driven study evaluating the impact of bonfire restrictions on **PM2.5 air pollution levels** in Israel during **Lag BaOmer** (2021–2025).  
 This project is aimed at environmental researchers, public health policymakers, and data science students interested in real-world applications of statistical learning.
