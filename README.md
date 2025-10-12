@@ -25,38 +25,11 @@ By combining public air quality data with non-parametric statistical analysis, t
    cd lagbaomer-pm25
    ```
 
-2. **Set up a virtual environment (optional but recommended)**
+2. **Open the analysis notebook**
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   jupyter notebook notebooks/reaserch_python.ipynb
    ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Open the analysis notebook**
-   ```bash
-   jupyter notebook notebooks/PM25_Analysis.ipynb
-   ```
-
 ---
-
-## Usage
-
-You can reproduce the full analysis by running the Jupyter notebook:
-
-```python
-# Load the PM2.5 dataset
-import pandas as pd
-df = pd.read_csv('data/pm25_lagbaomer_2021_2025.csv')
-
-# Perform Wilcoxon test comparing 2025 to 2021
-from scipy.stats import wilcoxon
-stat, p = wilcoxon(df['pm2021'], df['pm2025'])
-print(f'p-value: {p}')
-```
 
 
 ##  Technologies Used
@@ -79,7 +52,7 @@ lagbaomer-pm25/
 │   └── pm25_lagbaomer_2025.csv
 │
 ├── notebooks/                 # Jupyter notebooks
-│   └── PM25_Analysis.ipynb
+│   └── reaserch_python.ipynb
 │
 ├── README.md
 ```
