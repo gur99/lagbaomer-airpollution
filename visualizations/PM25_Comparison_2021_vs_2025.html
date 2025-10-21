@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_36a65beaf473f9518e2224e538a95ca6 {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_18d15c76948d6c0374d824581026fc92 {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 50.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/jieter/Leaflet.Sync/L.Map.Sync.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_36a65beaf473f9518e2224e538a95ca6" ></div>
+        
+    
+            <div class="folium-map" id="map_18d15c76948d6c0374d824581026fc92" ></div>
+        
+    
+
+<style>
+    .map-title-left {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 9999;
+        background-color: rgba(255,255,255,0.8);
+        padding: 6px 12px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+    .map-title-right {
+        position: absolute;
+        top: 10px;
+        right: 25%;
+        z-index: 9999;
+        background-color: rgba(255,255,255,0.8);
+        padding: 6px 12px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+</style>
+
+<div class="map-title-left">PM2.5 - 2021</div>
+<div class="map-title-right">PM2.5 - 2025</div>
+
+</body>
+<script>
+    
+    
+            var map_36a65beaf473f9518e2224e538a95ca6 = L.map(
+                "map_36a65beaf473f9518e2224e538a95ca6",
+                {
+                    center: [31.8, 35.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0bf460116ef5a8cdf3c45dd519d18e55 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0bf460116ef5a8cdf3c45dd519d18e55.addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+            var circle_marker_bb3a6081f1fac0cd9625e8ae0020d63e = L.circleMarker(
+                [32.0504, 34.7663],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_8bdf2ca5cb12bbeb74c27097d82d3ca8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30cd482e2e70f7a8535d28a3f86f27c2 = $(`<div id="html_30cd482e2e70f7a8535d28a3f86f27c2" style="width: 100.0%; height: 100.0%;">תל אביב-יפו, רחוב לחי<br><b>Max PM2.5 (2021):</b> 109.3</div>`)[0];
+                popup_8bdf2ca5cb12bbeb74c27097d82d3ca8.setContent(html_30cd482e2e70f7a8535d28a3f86f27c2);
+            
+        
+
+        circle_marker_bb3a6081f1fac0cd9625e8ae0020d63e.bindPopup(popup_8bdf2ca5cb12bbeb74c27097d82d3ca8)
+        ;
+
+        
+    
+    
+            var circle_marker_3a0e454d425e6ffb9d64f2ab9098415d = L.circleMarker(
+                [31.7977, 35.2137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_e7fdcda77c8756f7b60231526da2ba6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce7f2485da50c716c182c1e84ce916da = $(`<div id="html_ce7f2485da50c716c182c1e84ce916da" style="width: 100.0%; height: 100.0%;">ירושלים, רחוב בר אילן<br><b>Max PM2.5 (2021):</b> 86.0</div>`)[0];
+                popup_e7fdcda77c8756f7b60231526da2ba6b.setContent(html_ce7f2485da50c716c182c1e84ce916da);
+            
+        
+
+        circle_marker_3a0e454d425e6ffb9d64f2ab9098415d.bindPopup(popup_e7fdcda77c8756f7b60231526da2ba6b)
+        ;
+
+        
+    
+    
+            var circle_marker_f2ec1e58a04cdb7122d603752ab8d5ed = L.circleMarker(
+                [32.7768, 35.0202],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_d763e812c375fd6c0828d3c0f0460131 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3ef3b2a1304b2581fe3dd3bd9fe6946 = $(`<div id="html_e3ef3b2a1304b2581fe3dd3bd9fe6946" style="width: 100.0%; height: 100.0%;">חיפה, נווה שאנן<br><b>Max PM2.5 (2021):</b> 37.0</div>`)[0];
+                popup_d763e812c375fd6c0828d3c0f0460131.setContent(html_e3ef3b2a1304b2581fe3dd3bd9fe6946);
+            
+        
+
+        circle_marker_f2ec1e58a04cdb7122d603752ab8d5ed.bindPopup(popup_d763e812c375fd6c0828d3c0f0460131)
+        ;
+
+        
+    
+    
+            var circle_marker_c7bde96bbfae0b774e79d75f488bdd0a = L.circleMarker(
+                [32.7684, 35.0422],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_449461633ae25b650cdb08d8e75c040e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_413357dbcbbcef1dc16068dce10bc13a = $(`<div id="html_413357dbcbbcef1dc16068dce10bc13a" style="width: 100.0%; height: 100.0%;">נשר, נשר<br><b>Max PM2.5 (2021):</b> 38.5</div>`)[0];
+                popup_449461633ae25b650cdb08d8e75c040e.setContent(html_413357dbcbbcef1dc16068dce10bc13a);
+            
+        
+
+        circle_marker_c7bde96bbfae0b774e79d75f488bdd0a.bindPopup(popup_449461633ae25b650cdb08d8e75c040e)
+        ;
+
+        
+    
+    
+            var circle_marker_38c8a234fbd95627288e52c846dfa98b = L.circleMarker(
+                [31.2589, 35.2126],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_a01452fc066df968d1c9130cec9f905a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a0db8eb6d07efe6e507710edd8c5d8e = $(`<div id="html_0a0db8eb6d07efe6e507710edd8c5d8e" style="width: 100.0%; height: 100.0%;">ערד, נגב מזרחי<br><b>Max PM2.5 (2021):</b> 74.0</div>`)[0];
+                popup_a01452fc066df968d1c9130cec9f905a.setContent(html_0a0db8eb6d07efe6e507710edd8c5d8e);
+            
+        
+
+        circle_marker_38c8a234fbd95627288e52c846dfa98b.bindPopup(popup_a01452fc066df968d1c9130cec9f905a)
+        ;
+
+        
+    
+    
+            var circle_marker_2b25c284f8ca56a4fef6fe010da78182 = L.circleMarker(
+                [32.0282, 34.8543],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_16a8b30188262539d5690bfc8e777817 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f337a0fca06ac571c9e572f1ca52be76 = $(`<div id="html_f337a0fca06ac571c9e572f1ca52be76" style="width: 100.0%; height: 100.0%;">אור יהודה, אור יהודה<br><b>Max PM2.5 (2021):</b> 158.3</div>`)[0];
+                popup_16a8b30188262539d5690bfc8e777817.setContent(html_f337a0fca06ac571c9e572f1ca52be76);
+            
+        
+
+        circle_marker_2b25c284f8ca56a4fef6fe010da78182.bindPopup(popup_16a8b30188262539d5690bfc8e777817)
+        ;
+
+        
+    
+    
+            var circle_marker_d2b4ca068e8092e1893facbd8b270892 = L.circleMarker(
+                [31.7974, 34.6508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_f9eab17bd3375c84fbe43698a80514ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0783f36694af0096d5ad494b2bc4fae = $(`<div id="html_c0783f36694af0096d5ad494b2bc4fae" style="width: 100.0%; height: 100.0%;">אשדוד, רובע ט"ו החדשה<br><b>Max PM2.5 (2021):</b> 66.3</div>`)[0];
+                popup_f9eab17bd3375c84fbe43698a80514ed.setContent(html_c0783f36694af0096d5ad494b2bc4fae);
+            
+        
+
+        circle_marker_d2b4ca068e8092e1893facbd8b270892.bindPopup(popup_f9eab17bd3375c84fbe43698a80514ed)
+        ;
+
+        
+    
+    
+            var circle_marker_fe751fb5a8d57396cf8b580ec0965830 = L.circleMarker(
+                [32.443, 34.9206],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_5eaa1052e331eee12b7dcb71fbdd98f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a8af58d9f65c82fb9c8d019927ac8a7 = $(`<div id="html_9a8af58d9f65c82fb9c8d019927ac8a7" style="width: 100.0%; height: 100.0%;">חדרה, חפציבה<br><b>Max PM2.5 (2021):</b> 55.6</div>`)[0];
+                popup_5eaa1052e331eee12b7dcb71fbdd98f0.setContent(html_9a8af58d9f65c82fb9c8d019927ac8a7);
+            
+        
+
+        circle_marker_fe751fb5a8d57396cf8b580ec0965830.bindPopup(popup_5eaa1052e331eee12b7dcb71fbdd98f0)
+        ;
+
+        
+    
+    
+            var circle_marker_edc268f7edc29911828e4a80de86f856 = L.circleMarker(
+                [32.503, 35.0507],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_1ea6e6907c65c97bfef7fefa5447c5d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf73d51bc36d4e1953036517403e63c0 = $(`<div id="html_bf73d51bc36d4e1953036517403e63c0" style="width: 100.0%; height: 100.0%;">חריש, חריש<br><b>Max PM2.5 (2021):</b> 50.6</div>`)[0];
+                popup_1ea6e6907c65c97bfef7fefa5447c5d0.setContent(html_bf73d51bc36d4e1953036517403e63c0);
+            
+        
+
+        circle_marker_edc268f7edc29911828e4a80de86f856.bindPopup(popup_1ea6e6907c65c97bfef7fefa5447c5d0)
+        ;
+
+        
+    
+    
+            var circle_marker_e1f821435f181641db322ca70de65b13 = L.circleMarker(
+                [31.7304, 34.7472],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_0405fa860a0ad1c7384a705c0bc0157a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16262c0c30aff41202c46730d5e2c7e9 = $(`<div id="html_16262c0c30aff41202c46730d5e2c7e9" style="width: 100.0%; height: 100.0%;">קריית מלאכי, קריית מלאכי<br><b>Max PM2.5 (2021):</b> 124.1</div>`)[0];
+                popup_0405fa860a0ad1c7384a705c0bc0157a.setContent(html_16262c0c30aff41202c46730d5e2c7e9);
+            
+        
+
+        circle_marker_e1f821435f181641db322ca70de65b13.bindPopup(popup_0405fa860a0ad1c7384a705c0bc0157a)
+        ;
+
+        
+    
+    
+            var circle_marker_e13f025e089661bec7f3cdd405cba00a = L.circleMarker(
+                [32.8075, 35.108],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_36a65beaf473f9518e2224e538a95ca6);
+        
+    
+        var popup_9ea936b4729f6d3b191e3913b269862d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a8f749a6a05382f45e6ddd95ba14a10 = $(`<div id="html_7a8f749a6a05382f45e6ddd95ba14a10" style="width: 100.0%; height: 100.0%;">קריית אתא, ניידת 4<br><b>Max PM2.5 (2021):</b> 51.6</div>`)[0];
+                popup_9ea936b4729f6d3b191e3913b269862d.setContent(html_7a8f749a6a05382f45e6ddd95ba14a10);
+            
+        
+
+        circle_marker_e13f025e089661bec7f3cdd405cba00a.bindPopup(popup_9ea936b4729f6d3b191e3913b269862d)
+        ;
+
+        
+    
+    
+            var map_18d15c76948d6c0374d824581026fc92 = L.map(
+                "map_18d15c76948d6c0374d824581026fc92",
+                {
+                    center: [31.8, 35.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_37cd2845eeb4c148b653c4c71e094050 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_37cd2845eeb4c148b653c4c71e094050.addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+            var circle_marker_3f5ea6954434e895e6d193f5edddd3a0 = L.circleMarker(
+                [32.0504, 34.7663],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_fe896ef13fcaf5e60945680517718749 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73fac7a2cc4cb2720e6ae90fccf35a85 = $(`<div id="html_73fac7a2cc4cb2720e6ae90fccf35a85" style="width: 100.0%; height: 100.0%;">תל אביב-יפו, רחוב לחי<br><b>Max PM2.5 (2025):</b> 61.8</div>`)[0];
+                popup_fe896ef13fcaf5e60945680517718749.setContent(html_73fac7a2cc4cb2720e6ae90fccf35a85);
+            
+        
+
+        circle_marker_3f5ea6954434e895e6d193f5edddd3a0.bindPopup(popup_fe896ef13fcaf5e60945680517718749)
+        ;
+
+        
+    
+    
+            var circle_marker_fcef0d1fa22c812abeb1484cb4e4386b = L.circleMarker(
+                [31.7977, 35.2137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_a483ec27631d7edeccec571ab9097570 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c22483482130a04f74ff5076fddd2d9d = $(`<div id="html_c22483482130a04f74ff5076fddd2d9d" style="width: 100.0%; height: 100.0%;">ירושלים, רחוב בר אילן<br><b>Max PM2.5 (2025):</b> 74.6</div>`)[0];
+                popup_a483ec27631d7edeccec571ab9097570.setContent(html_c22483482130a04f74ff5076fddd2d9d);
+            
+        
+
+        circle_marker_fcef0d1fa22c812abeb1484cb4e4386b.bindPopup(popup_a483ec27631d7edeccec571ab9097570)
+        ;
+
+        
+    
+    
+            var circle_marker_81f8eb80a9206c82370cc1d4088fc1f0 = L.circleMarker(
+                [32.7768, 35.0202],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_43080c5cdfae327d0a07bd1711860d81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e931b86a728ca01d81185c40d2e7c21e = $(`<div id="html_e931b86a728ca01d81185c40d2e7c21e" style="width: 100.0%; height: 100.0%;">חיפה, נווה שאנן<br><b>Max PM2.5 (2025):</b> 13.2</div>`)[0];
+                popup_43080c5cdfae327d0a07bd1711860d81.setContent(html_e931b86a728ca01d81185c40d2e7c21e);
+            
+        
+
+        circle_marker_81f8eb80a9206c82370cc1d4088fc1f0.bindPopup(popup_43080c5cdfae327d0a07bd1711860d81)
+        ;
+
+        
+    
+    
+            var circle_marker_f27d2d57103fe3c199f6810f6ccc753e = L.circleMarker(
+                [32.7684, 35.0422],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_c71c4b4d4d811ec9c19637136e90d3b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e176f1156c1ba2d25f42cfcef7c97cd6 = $(`<div id="html_e176f1156c1ba2d25f42cfcef7c97cd6" style="width: 100.0%; height: 100.0%;">נשר, נשר<br><b>Max PM2.5 (2025):</b> 17.1</div>`)[0];
+                popup_c71c4b4d4d811ec9c19637136e90d3b5.setContent(html_e176f1156c1ba2d25f42cfcef7c97cd6);
+            
+        
+
+        circle_marker_f27d2d57103fe3c199f6810f6ccc753e.bindPopup(popup_c71c4b4d4d811ec9c19637136e90d3b5)
+        ;
+
+        
+    
+    
+            var circle_marker_df13398f986457ad244d99507bf91354 = L.circleMarker(
+                [31.2589, 35.2126],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_70e1819c4255482ebcc17f4e7ff0bda9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7243e3bcc74a69fb7aedd8e74b3713a1 = $(`<div id="html_7243e3bcc74a69fb7aedd8e74b3713a1" style="width: 100.0%; height: 100.0%;">ערד, נגב מזרחי<br><b>Max PM2.5 (2025):</b> 23.7</div>`)[0];
+                popup_70e1819c4255482ebcc17f4e7ff0bda9.setContent(html_7243e3bcc74a69fb7aedd8e74b3713a1);
+            
+        
+
+        circle_marker_df13398f986457ad244d99507bf91354.bindPopup(popup_70e1819c4255482ebcc17f4e7ff0bda9)
+        ;
+
+        
+    
+    
+            var circle_marker_817f9d7cbc4d4dab7d71e8f1c5ff5046 = L.circleMarker(
+                [32.0282, 34.8543],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_d8437cdc8ab02591a46fe71d6d46d08a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0d3de7fedcfda49209221e5f6a60c56 = $(`<div id="html_a0d3de7fedcfda49209221e5f6a60c56" style="width: 100.0%; height: 100.0%;">אור יהודה, אור יהודה<br><b>Max PM2.5 (2025):</b> 62.5</div>`)[0];
+                popup_d8437cdc8ab02591a46fe71d6d46d08a.setContent(html_a0d3de7fedcfda49209221e5f6a60c56);
+            
+        
+
+        circle_marker_817f9d7cbc4d4dab7d71e8f1c5ff5046.bindPopup(popup_d8437cdc8ab02591a46fe71d6d46d08a)
+        ;
+
+        
+    
+    
+            var circle_marker_34aae8df426cf541980401c9a4eca3a6 = L.circleMarker(
+                [31.7974, 34.6508],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_5f9958dc051ecdc21c904280bc801293 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2807a5e20b7f1b20ed6683eeee9b4f72 = $(`<div id="html_2807a5e20b7f1b20ed6683eeee9b4f72" style="width: 100.0%; height: 100.0%;">אשדוד, רובע ט"ו החדשה<br><b>Max PM2.5 (2025):</b> 81.5</div>`)[0];
+                popup_5f9958dc051ecdc21c904280bc801293.setContent(html_2807a5e20b7f1b20ed6683eeee9b4f72);
+            
+        
+
+        circle_marker_34aae8df426cf541980401c9a4eca3a6.bindPopup(popup_5f9958dc051ecdc21c904280bc801293)
+        ;
+
+        
+    
+    
+            var circle_marker_b449a1f5448955e8b52608b2447c8a74 = L.circleMarker(
+                [32.443, 34.9206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_b7eed21c565101792e8a4ec7612f090a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a503e0ef0bb881c9cab1b8e624c9c3a6 = $(`<div id="html_a503e0ef0bb881c9cab1b8e624c9c3a6" style="width: 100.0%; height: 100.0%;">חדרה, חפציבה<br><b>Max PM2.5 (2025):</b> 77.3</div>`)[0];
+                popup_b7eed21c565101792e8a4ec7612f090a.setContent(html_a503e0ef0bb881c9cab1b8e624c9c3a6);
+            
+        
+
+        circle_marker_b449a1f5448955e8b52608b2447c8a74.bindPopup(popup_b7eed21c565101792e8a4ec7612f090a)
+        ;
+
+        
+    
+    
+            var circle_marker_20deb943332c38d8b3760cddc9d545b3 = L.circleMarker(
+                [32.503, 35.0507],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_feda1750ec384d86eb7043e45234c22b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10bb1165220c6b311e824b63f97aab2b = $(`<div id="html_10bb1165220c6b311e824b63f97aab2b" style="width: 100.0%; height: 100.0%;">חריש, חריש<br><b>Max PM2.5 (2025):</b> 12.0</div>`)[0];
+                popup_feda1750ec384d86eb7043e45234c22b.setContent(html_10bb1165220c6b311e824b63f97aab2b);
+            
+        
+
+        circle_marker_20deb943332c38d8b3760cddc9d545b3.bindPopup(popup_feda1750ec384d86eb7043e45234c22b)
+        ;
+
+        
+    
+    
+            var circle_marker_d901b83d602b80aa32ca509dd6326e4c = L.circleMarker(
+                [31.7304, 34.7472],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_41d17f79a1523fad294d9dd2fa7bba7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef58ceb38196e22cca70af5c900a4f11 = $(`<div id="html_ef58ceb38196e22cca70af5c900a4f11" style="width: 100.0%; height: 100.0%;">קריית מלאכי, קריית מלאכי<br><b>Max PM2.5 (2025):</b> 42.5</div>`)[0];
+                popup_41d17f79a1523fad294d9dd2fa7bba7e.setContent(html_ef58ceb38196e22cca70af5c900a4f11);
+            
+        
+
+        circle_marker_d901b83d602b80aa32ca509dd6326e4c.bindPopup(popup_41d17f79a1523fad294d9dd2fa7bba7e)
+        ;
+
+        
+    
+    
+            var circle_marker_b416c28e8242c4b91a4ef61be6014e4d = L.circleMarker(
+                [32.8075, 35.108],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_18d15c76948d6c0374d824581026fc92);
+        
+    
+        var popup_164cb03c3bbc3bc3f8fe68cc26a6047c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb4540b9bb84445c57b4cdbe5497afef = $(`<div id="html_bb4540b9bb84445c57b4cdbe5497afef" style="width: 100.0%; height: 100.0%;">קריית אתא, ניידת 4<br><b>Max PM2.5 (2025):</b> 14.8</div>`)[0];
+                popup_164cb03c3bbc3bc3f8fe68cc26a6047c.setContent(html_bb4540b9bb84445c57b4cdbe5497afef);
+            
+        
+
+        circle_marker_b416c28e8242c4b91a4ef61be6014e4d.bindPopup(popup_164cb03c3bbc3bc3f8fe68cc26a6047c)
+        ;
+
+        
+    
+    
+            map_36a65beaf473f9518e2224e538a95ca6.sync(map_18d15c76948d6c0374d824581026fc92);
+            map_18d15c76948d6c0374d824581026fc92.sync(map_36a65beaf473f9518e2224e538a95ca6);
+        
+</script>
+</html>
